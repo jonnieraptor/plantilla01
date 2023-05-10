@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
+import { LoginComponent } from './login/login.component';
 // notice this
 
 @NgModule({
@@ -31,7 +33,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     HttpModule,
     NgxDatatableModule,
   ],
-  declarations: [AppComponent, DemoComponent, AlertComponent],
+  declarations: [AppComponent, LoginComponent, DemoComponent, AlertComponent],
   bootstrap: [AppComponent],
   providers: [UserService, HttpClient],
 })
