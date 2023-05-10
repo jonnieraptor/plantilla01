@@ -3,7 +3,7 @@ import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
