@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { User } from 'src/app/modelo/Interfaces';
+import { getMatIconFailedToSanitizeUrlError } from '@angular/material/icon/typings/icon-registry';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,9 @@ export class LoginComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
 
-  user!: User;
+  private user!: User;
+  public loading: boolean=false;
+  private hide: boolean = false;
   // isValidFormSubmitted = null;
   isLoginError: boolean = false;
   userForm = new FormGroup({
@@ -23,9 +26,6 @@ export class LoginComponent implements OnInit {
       Validators.minLength(5),
     ]),
   });
-
-  public loading: boolean;
-  hide: boolean;
 
   onSubmit(userName, password) {
     this.loading = true;

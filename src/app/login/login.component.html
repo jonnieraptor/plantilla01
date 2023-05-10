@@ -27,20 +27,17 @@
   </div>
   <div>
     <!-- appearance="standard" -->
-    <mat-form-field style="width: 90%;" appearance="outline">
-      <mat-label>Introduce tu contraseña</mat-label>
-      <input
-        id="Password"
-        #Password
-        matInput
-        formControlName="Password"
-        min="6"
-        [type]="!hide ? 'password' : 'text'"
-      />
-      <mat-icon matSuffix (click)="hide = !hide">
-        {{ hide ? 'visibility' : 'visibility_off' }}
-      </mat-icon>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
     </mat-form-field>
+
+
   </div>
   <div *ngIf="isLoginError">
     <i style="color:red">Credenciales incorrectas</i>
