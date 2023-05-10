@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { LoginComponent } from './login/login.component';
+import { EjemploComponent } from './ejemplo/ejemplo.component';
 
 import { MaterialModule } from './material/material.module';
 // notice this
@@ -30,7 +31,13 @@ import { MaterialModule } from './material/material.module';
     NgxDatatableModule,
     MaterialModule,
   ],
-  declarations: [AppComponent, LoginComponent, DemoComponent, AlertComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DemoComponent,
+    AlertComponent,
+    EjemploComponent,
+  ],
   bootstrap: [AppComponent],
   providers: [UserService, HttpClient],
 })
