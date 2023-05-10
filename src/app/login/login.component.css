@@ -1,0 +1,24 @@
+.propuesta-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+  min-width: 300px;
+  max-height: 65%;
+  margin: 5% auto 0px auto;
+  
+}
+
+.full-width {
+  width: 100%;
+}
+
+.centro{
+  text-align: center;
+  
+}
+
+.anchoBoton{
+  width: 100%;
+  font-size: 18px;
+  text-align-last: center;
+}
