@@ -1,37 +1,59 @@
-<br>
+<br />
 
-<form class="propuesta-card" [formGroup]="userForm" #loginForm="ngForm" (ngSubmit)="onSubmit(UserName.value,Password.value)">
+<form
+  class="propuesta-card"
+  [formGroup]="userForm"
+  #loginForm="ngForm"
+  (ngSubmit)="onSubmit(UserName.value, Password.value)"
+>
+  <div class="centro">
     <div class="centro">
-        <div class="centro">
-            <img src='assets/PWEB_ICON.png' width="90" height="110">
-        </div>
-        <h3>Propuestas de Crédito</h3>
+      <img src="assets/PWEB_ICON.png" width="90" height="110" />
     </div>
-    <div>
-            <!-- appearance="standard" -->
-        <mat-form-field style="width: 90%;" appearance="outline">
-            <mat-label>Usuario</mat-label>
-            <input id="UserName" #UserName matInput formControlName="UserName" min="6">
-        </mat-form-field>
-    </div>
-    <div>
-            <!-- appearance="standard" -->
-        <mat-form-field style="width: 90%;" appearance="outline">
-            <mat-label>Introduce tu contraseña</mat-label>
-            <input id="Password" #Password matInput formControlName="Password" min="6"
-                [type]="!hide ? 'password':'text'">
-            <mat-icon matSuffix (click)="hide = !hide">
-                {{hide ? 'visibility' : 'visibility_off' }}
-            </mat-icon>
-        </mat-form-field>
-    </div>
-    <div *ngIf="isLoginError">
-        <i style="color:red">Credenciales incorrectas</i>
-    </div>
-    <br>
-    <div>
-        <button mat-stroked-button style="height: 40px; width: 91%; font-size: 25px" type="submit"
-            [disabled]="!userForm.valid">Siguiente
-        </button>
-    </div>
+    <h3>Aplicación</h3>
+  </div>
+  <div>
+    <!-- appearance="standard" -->
+    <mat-form-field style="width: 90%;" appearance="outline">
+      <mat-label>Usuario</mat-label>
+      <input
+        id="UserName"
+        #UserName
+        matInput
+        formControlName="UserName"
+        min="6"
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <!-- appearance="standard" -->
+    <mat-form-field style="width: 90%;" appearance="outline">
+      <mat-label>Introduce tu contraseña</mat-label>
+      <input
+        id="Password"
+        #Password
+        matInput
+        formControlName="Password"
+        min="6"
+        [type]="!hide ? 'password' : 'text'"
+      />
+      <mat-icon matSuffix (click)="hide = !hide">
+        {{ hide ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </mat-form-field>
+  </div>
+  <div *ngIf="isLoginError">
+    <i style="color:red">Credenciales incorrectas</i>
+  </div>
+  <br />
+  <div>
+    <button
+      mat-stroked-button
+      style="height: 40px; width: 91%; font-size: 25px"
+      type="submit"
+      [disabled]="!userForm.valid"
+    >
+      Siguiente
+    </button>
+  </div>
 </form>
