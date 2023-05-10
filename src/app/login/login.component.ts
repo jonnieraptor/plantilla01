@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-
+import { User } from 'src/app/modelo/Interfaces';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
 
-  user: User;
+  user!: User;
   // isValidFormSubmitted = null;
   isLoginError: boolean = false;
   userForm = new FormGroup({
