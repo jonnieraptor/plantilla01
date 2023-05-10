@@ -28,7 +28,6 @@
   <div>
     <!-- appearance="standard" -->
 
-
     <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'">
@@ -36,7 +35,6 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-
 
   </div>
   <div *ngIf="isLoginError">
