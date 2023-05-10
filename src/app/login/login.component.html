@@ -10,7 +10,7 @@
     <div class="centro">
       <img src="assets/circulo.png" width="90" height="110" />
     </div>
-    <h3>Proceso de transformación</h3>
+    <h3>Proceso 001</h3>
   </div>
   <div>
     <!-- appearance="standard" -->
@@ -25,9 +25,8 @@
       />
     </mat-form-field>
   </div>
+  
   <div>
-    <!-- appearance="standard" -->
-
     <mat-form-field appearance="fill">
       <mat-label>Enter your password</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'">
@@ -35,8 +34,8 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-
   </div>
+
   <div *ngIf="isLoginError">
     <i style="color:red">Credenciales incorrectas</i>
   </div>
