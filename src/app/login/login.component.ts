@@ -1,22 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { User } from 'src/app/modelo/Interfaces';
-import { getMatIconFailedToSanitizeUrlError } from '@angular/material/icon/typings/icon-registry';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
-
-  private user!: User;
-  public loading: boolean=false;
-  private hide: boolean = false;
+export class LoginComponent {
+  user!: User;
   // isValidFormSubmitted = null;
   isLoginError: boolean = false;
   userForm = new FormGroup({
@@ -27,7 +21,11 @@ export class LoginComponent implements OnInit {
     ]),
   });
 
-  onSubmit(userName, password) {
+  public loading: boolean = false;
+  hide: boolean = false;
+
+  onSubmit(userName: any, password: any) {
+    console.log(userName + ' ' + password);
     this.loading = true;
   }
 }

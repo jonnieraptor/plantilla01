@@ -1,19 +1,20 @@
 <br />
 
+<div class="centro">
+  <img src="assets/content.png" width="30%" height="30%" />
+</div>
+
+<div class="centro">
+  <h4>Planilla pre-elaborada</h4>
+</div>
+
 <form
   class="propuesta-card"
   [formGroup]="userForm"
   #loginForm="ngForm"
   (ngSubmit)="onSubmit(UserName.value, Password.value)"
 >
-  <div class="centro">
-    <div class="centro">
-      <img src="assets/circulo.png" width="90" height="110" />
-    </div>
-    <h3>Proceso 001</h3>
-  </div>
   <div>
-    <!-- appearance="standard" -->
     <mat-form-field style="width: 90%;" appearance="outline">
       <mat-label>Usuario</mat-label>
       <input
@@ -25,17 +26,23 @@
       />
     </mat-form-field>
   </div>
-  
   <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
+    <!-- appearance="standard" -->
+    <mat-form-field style="width: 90%;" appearance="outline">
+      <mat-label>Introduce tu contraseña</mat-label>
+      <input
+        id="Password"
+        #Password
+        matInput
+        formControlName="Password"
+        min="6"
+        [type]="!hide ? 'password' : 'text'"
+      />
+      <mat-icon matSuffix (click)="hide = !hide">
+        {{ hide ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
     </mat-form-field>
   </div>
-
   <div *ngIf="isLoginError">
     <i style="color:red">Credenciales incorrectas</i>
   </div>
@@ -51,3 +58,27 @@
     </button>
   </div>
 </form>
+
+<div class="example-container">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Enter your password"
+      [type]="hide ? 'password' : 'text'"
+    />
+    <mat-icon matSuffix (click)="hide = !hide">{{
+      hide ? 'visibility' : 'visibility_off'
+    }}</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Amount"
+      type="number"
+      class="example-right-align"
+    />
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
+  </mat-form-field>
+</div>
